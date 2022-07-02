@@ -24,3 +24,12 @@
 20. [Conclusiones](#conclusiones)
 
 ## Introducción:
+
+Todo lo que necesitas para poder usar de manera adecuada el Asincronismo con JavaScript
+
+## Qué es asincronismo:
+
+Para poder entender que es asincronismo, tenemos que conocer unos cuantos conceptos antes, primero hay que aclarar que los lenguajes de programación son síncronos, todos se ejecutan tarea por tarea por tarea…
+Y con el tiempo se ha hecho que se pueda trabajar con el poder del asincronismo y veremos cómo está dentro de _JavaScript_
+Así que la definición de _JavaScript_ es síncrono por defecto y tiene un solo subproceso, ósea que trabaja sobre un solo hilo, _una mejor definición para entender o profundizar podría ser que JavaScript es síncrono y no bloqueante, con un bucle de eventos (concurrencia)_, implementado con un único hilo para sus interfaces de I/O, _(entradas y salidas)_.
+
