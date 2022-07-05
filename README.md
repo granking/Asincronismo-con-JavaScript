@@ -35,19 +35,38 @@ Así que la definición de ***JavaScript*** es síncrono por defecto y tiene un 
 
 Vamos a seguir separando conceptos muy importantes.
 
-    #### -JavaScript es single-threaded:
+#### - JavaScript es single-threaded:
 Aún con múltiples procesadores, solo se puede ejecutar tareas en un solo hilo, llamado el hilo principal. Ósea no importa cuantos procesadores tenga tu equipo o donde corre tu programa, JavaScript siempre se ejecuta en un solo hilo una sola tarea.
 
-    #### Bloqueante:
+#### - Bloqueante:
 Una tarea no devuelve el control hasta que se ha completado. Esto es algo característico cuando ejecutas todo en un hilo, ósea hasta que no se termine de ejecutar o cumplir la instrucción que se halla declarado o codificado no continua la ejecución del programa.
 
-    ### No bloqueante:
+### - No bloqueante:
 Una tarea se devuelve inmediatamente con independencia del resultado. Si se completó, devuelve los datos. Si no, Un error.
 
-    ### Síncrono:
+### - Síncrono:
 Las tareas se ejecutan de forma secuencial, se debe esperar a que se complete para continuar con la siguiente tarea
 
+### - Asíncrono: 
+Las tareas pueden ser realizadas más tarde, lo que hace posible que una respuesta sea procesada en diferido. La finalización de la operación I/O (entrada/salida) se señaliza más tarde, mediante un mecanismo específico como por ejemplo un callback, una promesa o un evento, lo que hace posible que la respuesta sea procesada en diferido.
 
+### - Concurrencia en JavaScript:
+Utiliza un modelo de concurrencia basado en un *“loop de eventos”*. La concurrencia es la capacidad de un algoritmo o programa para ejecutar más de una tarea a la vez. El concepto es similar al procesamiento paralelo, pero con la posibilidad de que muchos trabajos independientes hagan diferentes cosas a la vez en lugar de ejecutar el mismo trabajo.
 
+### - EventLoop:
+El bucle de eventos *(Eventloop)* es un patrón de diseño que espera y distribuye eventos o mensajes en un programa.
 
+### **-Formas de manejar la asincronía en JavaScript:**
 
+- **CallBacks:** Una función que se pasa como argumento de otra función y que será invocada según sea la necesidad.
+- **Promesas:** *(implementado en ES6)* Una promesa es una función no-bloqueante y asíncrona la cual puede retornar un valor ahora, en el futuro o nunca.
+- **Async / Await:** *(implementado en ES2017)* Permite estructurar una función asincrónica sin bloqueo de una manera similar a una función sincrónica ordinaria.
+
+¿Con estas tres funcionalidades JavaScript acaba de convertirse en *Multi-Threaded* con la capacidad de realizar múltiples tareas simultáneamente?, Umm si y no, ya que como se dijo en un comienzo JavaScript es *single-threaded*, y siempre lo será, solo que se ha ido actualizando y adaptando a las necesidades y estas funcionalidades son la forma más fácil de poder hacerlo.
+En **JavaScript** casi todas las operaciones de I/O *(Entrada y Salida)* no se bloquean. A esto se le conoce como asíncronismo. Lo único que no es procesado antes de que termine la operación son los callbacks, ya que éstos están amarrados a una operación y esperan a que sea finalizada para poder ejecutarse.
+El **asincronismo** es una manera de aprovechar el tiempo y los recursos de la aplicación, ejecutando tareas y procesos mientras otros son resueltos en background *(como la llegada de la información de una API)*, para posteriormente continuar con las tareas que requerían esa información que no tenías de manera instantánea.
+Un ejemplo fácil de asincronismo vs sincronismo es invitar a unos amigos a una fiesta y ofrecer una parrillada. Primero decides colocar la carne y verduras a la parrilla y luego repartir bebidas y algo para picar *(snacks)*. Si fuera una persona síncrona *(Blocking)* tendrías que esperar a que la comida de la parrilla esté cocinada y luego atender a los invitados. Pero si fuera una persona asíncrona *(Non Blocking)* luego de poner la carne al carbón, sacas las bebidas frías de la nevera y compartes con los invitados mientras se cocina la carne. La acción de que la comida en la parrillada esté lista sería un callback que está esperando que finalice el proceso para ejecutarse. Pero otros procesos *(como compartir la velada con bebidas y algo de picar)* ya podrían irse realizando.
+
+    **Conclusion:** Ahora decimos que JavaScript es Asíncrono y no bloqueante, con un bucle de eventos *(concurrencia)* implementando con unúnico hilo para sus interfaces de I/O.
+
+**[⬆ Volver arriba](#contenido)**
