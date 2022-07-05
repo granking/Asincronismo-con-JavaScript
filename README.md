@@ -68,7 +68,13 @@ El **asincronismo** es una manera de aprovechar el tiempo y los recursos de la a
 Un ejemplo fácil de asincronismo vs sincronismo es invitar a unos amigos a una fiesta y ofrecer una parrillada. Primero decides colocar la carne y verduras a la parrilla y luego repartir bebidas y algo para picar *(snacks)*. Si fuera una persona síncrona *(Blocking)* tendrías que esperar a que la comida de la parrilla esté cocinada y luego atender a los invitados. Pero si fuera una persona asíncrona *(Non Blocking)* luego de poner la carne al carbón, sacas las bebidas frías de la nevera y compartes con los invitados mientras se cocina la carne. La acción de que la comida en la parrillada esté lista sería un callback que está esperando que finalice el proceso para ejecutarse. Pero otros procesos *(como compartir la velada con bebidas y algo de picar)* ya podrían irse realizando.
 
     Conclusion: Ahora decimos que JavaScript es Asíncrono y no bloqueante,
-    con un bucle de eventos (concurrencia) implementando con unúnico hilo
+    con un bucle de eventos (concurrencia) implementado con unúnico hilo
     para sus interfaces de I/O.
 
 **[⬆ Volver arriba](#contenido)**
+
+* * *
+
+## Event loop
+
+![Ejemplo grafico del event loop](https://res.cloudinary.com/practicaldev/image/fetch/s--JNUvMc4A--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/mo2h5r746hsicv0jjeht.gif "event loop")
