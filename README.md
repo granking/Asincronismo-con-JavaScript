@@ -25,7 +25,7 @@
 
 ## Introducción
 
-Todo lo que necesitas para poder usar de manera adecuada el Asincronismo con JavaScript
+Todo lo que necesitas saber para poder usar de manera adecuada el Asincronismo con JavaScript
 
 ## Qué es asincronismo
 
@@ -35,14 +35,18 @@ Así que la definición de ***JavaScript*** es síncrono por defecto y tiene un 
 
 Vamos a seguir separando conceptos muy importantes.
 
-#### JavaScript es single-threaded:
+    #### -JavaScript es single-threaded:
 Aún con múltiples procesadores, solo se puede ejecutar tareas en un solo hilo, llamado el hilo principal. Ósea no importa cuantos procesadores tenga tu equipo o donde corre tu programa, JavaScript siempre se ejecuta en un solo hilo una sola tarea.
 
-#### Bloqueante:
+    #### Bloqueante:
 Una tarea no devuelve el control hasta que se ha completado. Esto es algo característico cuando ejecutas todo en un hilo, ósea hasta que no se termine de ejecutar o cumplir la instrucción que se halla declarado o codificado no continua la ejecución del programa.
 
-### No bloqueante:
+    ### No bloqueante:
 Una tarea se devuelve inmediatamente con independencia del resultado. Si se completó, devuelve los datos. Si no, Un error.
+
+    ### Síncrono:
+Las tareas se ejecutan de forma secuencial, se debe esperar a que se complete para continuar con la siguiente tarea
+
 
 
 
