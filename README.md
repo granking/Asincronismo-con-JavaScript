@@ -23,13 +23,29 @@
 19. [Desplegando el proyecto](#desplegando-el-proyecto)
 20. [Conclusiones](#conclusiones)
 
-## Introducción:
+## Introducción
 
 Todo lo que necesitas para poder usar de manera adecuada el Asincronismo con JavaScript
 
-## Qué es asincronismo:
+## Qué es asincronismo
 
 Para poder entender que es asincronismo, tenemos que conocer unos cuantos conceptos antes, primero hay que aclarar que los lenguajes de programación son síncronos, todos se ejecutan tarea por tarea por tarea…
 Y con el tiempo se ha hecho que se pueda trabajar con el poder del asincronismo y veremos cómo está dentro de ***JavaScript***
-Así que la definición de ***JavaScript*** es síncrono por defecto y tiene un solo subproceso, ósea que trabaja sobre un solo hilo, **una mejor definición para entender o profundizar podría ser que JavaScript es síncrono y no bloqueante, con un bucle de eventos (concurrencia)**, implementado con un único hilo para sus interfaces de I/O, ***(entradas y salidas)***.
+Así que la definición de ***JavaScript*** es síncrono por defecto y tiene un solo subproceso, ósea que trabaja sobre un solo hilo, **una mejor definición para entender o profundizar podría ser que JavaScript es síncrono y no bloqueante, con un bucle de eventos (concurrencia), implementado con un único hilo para sus interfaces de I/O,** ***(entradas y salidas)***.
+
+Vamos a seguir separando conceptos muy importantes.
+
+#### JavaScript es single-threaded:
+Aún con múltiples procesadores, solo se puede ejecutar tareas en un solo hilo, llamado el hilo principal. Ósea no importa cuantos procesadores tenga tu equipo o donde corre tu programa, JavaScript siempre se ejecuta en un solo hilo una sola tarea.
+
+- - -
+
+#### Bloqueante:
+Una tarea no devuelve el control hasta que se ha completado. Esto es algo característico cuando ejecutas todo en un hilo, ósea hasta que no se termine de ejecutar o cumplir la instrucción que se halla declarado o codificado no continua la ejecución del programa.
+
+### No bloqueante:
+Una tarea se devuelve inmediatamente con independencia del resultado. Si se completó, devuelve los datos. Si no, Un error.
+
+
+
 
