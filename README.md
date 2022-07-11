@@ -77,4 +77,33 @@ Un ejemplo fácil de asincronismo vs sincronismo es invitar a unos amigos a una 
 
 ## Event loop
 
+#### - Event loop:
+El bucle de eventos es un patrón de diseño que espera y distribuye eventos o mensajes en un programa.
+
+#### - Memory Head:
+Región de memoria libre de gran tamaño, dedicada al alojamiento dinámico de objetos (asignado a un montículo). Es compartida por todo el programa y controlada por un recolector de basura que se encarga de liberar aquello que no se necesita, es decir de forma desorganizada se guarda información de las variables y del scope.
+
+#### - Call Stack _(pila)_:
+Apila de forma organizada las instrucciones de nuestro programa. La pila de llamadas, se encarga de albergar las instrucciones que deben ejecutarse. Nos indica en que punto del programa estamos, por donde vamos.
+
+#### - Task Queue:
+Cola de tareas, se maneja la concurrencia, se agregan las tareas que ya estan listas para pasar al stack (pila), y para pasar al stack este debe de estar vacio. Cada vez que nuestro programa recibe una notificación del exterior o de otro contexto distinto al de la aplicación, el mensaje se inserta en una cola de mensajes pendientes y se registra su callback correspondiente. El stack debe estar vacío para que esto suceda.
+
+#### - Micro Task Queue:
+Las promesas tienen otra forma de ejecutarse y una prioridad superior, y es aqui donde se almacenas esas promesas, con una prioridad mas alta.
+
+#### - Web APIs:
+El JavaScript del lado del cliente: setTimeOut, XMLHTTPRequest, File Reader y el DOM. Node: fs, https.
+
+#### - Conclusion Event Lopp:
+Tarea asignada para mover del Task Queue al Stack, solo si el Stack esta vacio.
+
+> Imagen tomada de [pagina ejemplo](https://dev.to/papidiagne30/javascript-event-loop-for-dummies-1bdi)
 ![Ejemplo grafico del event loop](https://res.cloudinary.com/practicaldev/image/fetch/s--JNUvMc4A--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/mo2h5r746hsicv0jjeht.gif "event loop")
+
+**[⬆ Volver arriba](#contenido)**
+
+* * *
+
+## Iniciando a programar con JavaScript
+Aqui solo quiero motivarlos para que puedan avnzar y alcanzar las metas, intentar entender el porque se hace y para que se hace y como se ejecuta realmente todo lo que en cada lenguaje hacemos. 🚗✈🌎🏝🎆🎉🎊🎭
