@@ -124,7 +124,7 @@ Conceptos fundamentales antes de crear el proyecto:
 - Para entrar a una carpeta se escribe cd nombre-de-la-carpeta y se da ENTER.
 - Para crear un archivo se escribe touch nombre-del-archivo-extensión y se da ENTER.
 - Para iniciar el repositorio se escribe git init y se da ENTER.
-- Se debe de instalar nodejs en [nuestra maquina] (https://nodejs.org/es/download/).
+- Se debe de instalar nodejs en [nuestra maquina](https://nodejs.org/es/download/).
 - Vamos a inicializar el proyecto con npm, se escribe npm init y se da ENTER.
 - Aparece el nombre del proyecto, si no se quiere modificar el nombre, se da ENTER.
 - Aparece la versión del proyecto, si no se quiere modificar el número, se da ENTER.
@@ -137,7 +137,9 @@ Conceptos fundamentales antes de crear el proyecto:
 - Una vez dentro de VSC, en el panel izquierdo aparece el archivo package.json, crear una nueva carpeta llamada src donde contendrá nuestro código.
 - Crear el archivo .gitignore (estará fuera de la carpeta src) tiene que estar en la raiz. En los sistemas - Unix, dado que el archivo empieza con un punto, al abrir un explorador de archivos los toma como archivos ocultos y no son visibles.
 - En el archivo puedes colocar:
-    /node_modules/
+
+    ``` /node_modules/ ```
+
 - O puedes ir a esta [pagina](https://gitignore.io) y allí escribes la palabra node das enter y copias todo el contenido que se genero y lo pegas en gitignore.
 - Para guardar los cambios de un archivo, presionar las teclas Ctrl + S
 - Muy importante instalar la extensión Code Runner, presionar las teclas Ctrl + P y pegar: ext install formulahendry.code-runner y dar ENTER. Lo instala automáticamente fuente: [aquí]( https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner).
