@@ -107,3 +107,37 @@ Tarea asignada para mover del Task Queue al Stack, solo si el Stack esta vacio.
 
 ## Iniciando a programar con JavaScript
 Aqui solo quiero motivarlos para que puedan avnzar y alcanzar las metas, intentar entender el porque se hace y para que se hace y como se ejecuta realmente todo lo que en cada lenguaje hacemos. 🚗✈🌎🏝🎆🎉🎊🎭
+
+**[⬆ Volver arriba](#contenido)**
+
+* * *
+
+## Configuración
+Aquí veras la configuración del proyecto inicial y te indicare los pasos que se realizaron.
+Conceptos fundamentales antes de crear el proyecto:
+- Crear e inicializar un Proyecto:
+- Tener instalado Visual Studio Code o lo puedes instalar [Aquí]( https://code.visualstudio.com/) o utiliza tu editor preferido.
+- Abrir la terminal de tu preferencia.
+- Para conocer donde estamos ubicados se escribe pwd y se da ENTER.
+- Para ver las carpetas y archivos del lugar donde estamos, se escribe ls y se da ENTER.
+- Para crear una carpeta se escribe mkdir nombre-de-la-carpeta y se da ENTER.
+- Para entrar a una carpeta se escribe cd nombre-de-la-carpeta y se da ENTER.
+- Para crear un archivo se escribe touch nombre-del-archivo-extensión y se da ENTER.
+- Para iniciar el repositorio se escribe git init y se da ENTER.
+- Se debe de instalar nodejs en [nuestra maquina] (https://nodejs.org/es/download/).
+- Vamos a inicializar el proyecto con npm, se escribe npm init y se da ENTER.
+- Aparece el nombre del proyecto, si no se quiere modificar el nombre, se da ENTER.
+- Aparece la versión del proyecto, si no se quiere modificar el número, se da ENTER.
+- Aparece la descripción del proyecto, si se quiere modificar dejar vacío, se da ENTER.
+- Lo mismo, dejar vacío: entry point, test command, git repository.
+- En keywords se escribe las palabras claves como javascript y se da ENTER.
+- En la licencia por defecto aparece la ISC, pero la más común es la MIT para compartir y poder comercializar después el producto.
+- Por último, aparecen los datos ingresados (guardados en el archivo package.json) y si no hay que modificar, se escribe yes y se da ENTER.
+- Para entrar al editor VSC se escribe code . y se da ENTER.
+- Una vez dentro de VSC, en el panel izquierdo aparece el archivo package.json, crear una nueva carpeta llamada src donde contendrá nuestro código.
+- Crear el archivo .gitignore (estará fuera de la carpeta src) tiene que estar en la raiz. En los sistemas - Unix, dado que el archivo empieza con un punto, al abrir un explorador de archivos los toma como archivos ocultos y no son visibles.
+- En el archivo puedes colocar:
+    /node_modules/
+- O puedes ir a esta [pagina](https://gitignore.io) y allí escribes la palabra node das enter y copias todo el contenido que se genero y lo pegas en gitignore.
+- Para guardar los cambios de un archivo, presionar las teclas Ctrl + S
+- Muy importante instalar la extensión Code Runner, presionar las teclas Ctrl + P y pegar: ext install formulahendry.code-runner y dar ENTER. Lo instala automáticamente fuente: [aquí]( https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner).
