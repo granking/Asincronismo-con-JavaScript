@@ -145,3 +145,10 @@ Conceptos fundamentales antes de crear el proyecto:
 - O puedes ir a esta [pagina](https://gitignore.io) y allí escribes la palabra node das enter y copias todo el contenido que se genero y lo pegas en gitignore.
 - Para guardar los cambios de un archivo, presionar las teclas Ctrl + S
 - Muy importante instalar la extensión Code Runner, presionar las teclas Ctrl + P y pegar: ```ext install formulahendry.code-runner``` y dar ENTER. Lo instala automáticamente. [aquí]( https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner) esta la fuente.
+
+**[⬆ Volver arriba](#contenido)**
+
+* * *
+
+## Que son los callback:
+Son funciones que reciben dentro de los argumentos otras funciones las cuales serán llamadas o ejecutadas dentro de la función inicial, en la carpeta de ``src/callback`` vemos algunos ejemplos de funciones que llaman otras funciones.
