@@ -138,8 +138,10 @@ Conceptos fundamentales antes de crear el proyecto:
 - Crear el archivo .gitignore (estará fuera de la carpeta src) tiene que estar en la raiz. En los sistemas - Unix, dado que el archivo empieza con un punto, al abrir un explorador de archivos los toma como archivos ocultos y no son visibles.
 - En el archivo puedes colocar:
 
-    ``` /node_modules/ ```
+```markdown
+    /node_modules/
+```
 
 - O puedes ir a esta [pagina](https://gitignore.io) y allí escribes la palabra node das enter y copias todo el contenido que se genero y lo pegas en gitignore.
 - Para guardar los cambios de un archivo, presionar las teclas Ctrl + S
-- Muy importante instalar la extensión Code Runner, presionar las teclas Ctrl + P y pegar: ext install formulahendry.code-runner y dar ENTER. Lo instala automáticamente fuente: [aquí]( https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner).
+- Muy importante instalar la extensión Code Runner, presionar las teclas Ctrl + P y pegar: ```ext install formulahendry.code-runner``` y dar ENTER. Lo instala automáticamente. [aquí]( https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner) esta la fuente.
