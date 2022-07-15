@@ -2,21 +2,30 @@
 
 ## Contenido
 
-1. [Introducción](#introduccion)
-2. [Que es Asincronismo](#que-es-asincronismo)
-3. [Event Loop](#event-loop)
-4. [Iniciando a programar con JavaScript](#iniciando-a-programar-con-javascript)
-5. [Configuración](#configuracion)
-6. [Que son los callbacks](#que-son-los-callbacks)
-7. [XMLHTTPRequest](#xmlhttprequest)
-8. [Fetch Data](#fetch-data)
-9. [Callback Hell](#callback-hell)
-10. [Que son las Promesas](#que-son-las-promesas)
-11. [Fetch](#fetch)
-12. [Fetch Post](#fetch-post)
-13. [Funciones asíncronas](#funciones-asincronas)
-14. [Try and catch](#try-and-catch)
-15. [Como enfrentar bugs]()
+- [Asincronismo-con-JavaScript](#asincronismo-con-javascript)
+  - [Contenido](#contenido)
+  - [Introducción](#introducción)
+  - [Qué es asincronismo](#qué-es-asincronismo)
+      - [- JavaScript es single-threaded:](#--javascript-es-single-threaded)
+      - [- Bloqueante:](#--bloqueante)
+      - [- No bloqueante:](#--no-bloqueante)
+      - [- Síncrono:](#--síncrono)
+      - [- Asíncrono:](#--asíncrono)
+      - [- Concurrencia en JavaScript:](#--concurrencia-en-javascript)
+      - [- EventLoop:](#--eventloop)
+      - [**- Formas de manejar la asincronía en JavaScript:**](#--formas-de-manejar-la-asincronía-en-javascript)
+  - [Event loop](#event-loop)
+      - [- Event loop:](#--event-loop)
+      - [- Memory Head:](#--memory-head)
+      - [- Call Stack _(pila)_:](#--call-stack-pila)
+      - [- Task Queue:](#--task-queue)
+      - [- Micro Task Queue:](#--micro-task-queue)
+      - [- Web APIs:](#--web-apis)
+      - [- Conclusion Event Lopp:](#--conclusion-event-lopp)
+  - [Iniciando a programar con JavaScript](#iniciando-a-programar-con-javascript)
+  - [Configuración](#configuración)
+  - [Que son los callback:](#que-son-los-callback)
+  - [XMLHTTPRequest](#xmlhttprequest)
 
 ## Introducción
 
@@ -30,16 +39,16 @@ Así que la definición de ***JavaScript*** es síncrono por defecto y tiene un 
 
 Vamos a seguir separando conceptos muy importantes.
 
-#### JavaScript es single-threaded:
+#### - JavaScript es single-threaded:
 Aún con múltiples procesadores, solo se puede ejecutar tareas en un solo hilo, llamado el hilo principal. Ósea no importa cuantos procesadores tenga tu equipo o donde corre tu programa, JavaScript siempre se ejecuta en un solo hilo una sola tarea.
 
-#### Bloqueante:
+#### - Bloqueante:
 Una tarea no devuelve el control hasta que se ha completado. Esto es algo característico cuando ejecutas todo en un hilo, ósea hasta que no se termine de ejecutar o cumplir la instrucción que se halla declarado o codificado no continua la ejecución del programa.
 
-#### No bloqueante:
+#### - No bloqueante:
 Una tarea se devuelve inmediatamente con independencia del resultado. Si se completó, devuelve los datos. Si no, Un error.
 
-#### Síncrono:
+#### - Síncrono:
 Las tareas se ejecutan de forma secuencial, se debe esperar a que se complete para continuar con la siguiente tarea
 
 #### - Asíncrono: 
@@ -48,14 +57,14 @@ Las tareas pueden ser realizadas más tarde, lo que hace posible que una respues
 #### - Concurrencia en JavaScript:
 Utiliza un modelo de concurrencia basado en un *“loop de eventos”*. La concurrencia es la capacidad de un algoritmo o programa para ejecutar más de una tarea a la vez. El concepto es similar al procesamiento paralelo, pero con la posibilidad de que muchos trabajos independientes hagan diferentes cosas a la vez en lugar de ejecutar el mismo trabajo.
 
-#### EventLoop:
+#### - EventLoop:
 El bucle de eventos *(Eventloop)* es un patrón de diseño que espera y distribuye eventos o mensajes en un programa.
 
-#### **Formas de manejar la asincronía en JavaScript:**
+#### **- Formas de manejar la asincronía en JavaScript:**
 
-**CallBacks:** Una función que se pasa como argumento de otra función y que será invocada según sea la necesidad.
-**Promesas:** *(implementado en ES6)* Una promesa es una función no-bloqueante y asíncrona la cual puede retornar un valor ahora, en el futuro o nunca.
-**Async / Await:** *(implementado en ES2017)* Permite estructurar una función asincrónica sin bloqueo de una manera similar a una función sincrónica ordinaria.
+- **CallBacks:** Una función que se pasa como argumento de otra función y que será invocada según sea la necesidad.
+- **Promesas:** *(implementado en ES6)* Una promesa es una función no-bloqueante y asíncrona la cual puede retornar un valor ahora, en el futuro o nunca.
+- **Async / Await:** *(implementado en ES2017)* Permite estructurar una función asincrónica sin bloqueo de una manera similar a una función sincrónica ordinaria.
 
 ¿Con estas tres funcionalidades JavaScript acaba de convertirse en *Multi-Threaded* con la capacidad de realizar múltiples tareas simultáneamente?, Umm si y no, ya que como se dijo en un comienzo JavaScript es *single-threaded*, y siempre lo será, solo que se ha ido actualizando y adaptando a las necesidades y estas funcionalidades son la forma más fácil de poder hacerlo.
 En **JavaScript** casi todas las operaciones de I/O *(Entrada y Salida)* no se bloquean. A esto se le conoce como asíncronismo. Lo único que no es procesado antes de que termine la operación son los callbacks, ya que éstos están amarrados a una operación y esperan a que sea finalizada para poder ejecutarse.
@@ -70,27 +79,27 @@ Un ejemplo fácil de asincronismo vs sincronismo es invitar a unos amigos a una 
 
 * * *
 
-## Event Loop
+## Event loop
 
-#### Event loop:
+#### - Event loop:
 El bucle de eventos es un patrón de diseño que espera y distribuye eventos o mensajes en un programa.
 
-#### Memory Head:
+#### - Memory Head:
 Región de memoria libre de gran tamaño, dedicada al alojamiento dinámico de objetos (asignado a un montículo). Es compartida por todo el programa y controlada por un recolector de basura que se encarga de liberar aquello que no se necesita, es decir de forma desorganizada se guarda información de las variables y del scope.
 
-#### Call Stack _(pila)_:
+#### - Call Stack _(pila)_:
 Apila de forma organizada las instrucciones de nuestro programa. La pila de llamadas, se encarga de albergar las instrucciones que deben ejecutarse. Nos indica en que punto del programa estamos, por donde vamos.
 
-#### Task Queue:
+#### - Task Queue:
 Cola de tareas, se maneja la concurrencia, se agregan las tareas que ya estan listas para pasar al stack (pila), y para pasar al stack este debe de estar vacio. Cada vez que nuestro programa recibe una notificación del exterior o de otro contexto distinto al de la aplicación, el mensaje se inserta en una cola de mensajes pendientes y se registra su callback correspondiente. El stack debe estar vacío para que esto suceda.
 
-#### Micro Task Queue:
+#### - Micro Task Queue:
 Las promesas tienen otra forma de ejecutarse y una prioridad superior, y es aqui donde se almacenas esas promesas, con una prioridad mas alta.
 
-#### Web APIs:
+#### - Web APIs:
 El JavaScript del lado del cliente: setTimeOut, XMLHTTPRequest, File Reader y el DOM. Node: fs, https.
 
-#### Conclusion Event Lopp:
+#### - Conclusion Event Lopp:
 Tarea asignada para mover del Task Queue al Stack, solo si el Stack esta vacio.
 
 > Imagen tomada de [pagina ejemplo](https://dev.to/papidiagne30/javascript-event-loop-for-dummies-1bdi)
