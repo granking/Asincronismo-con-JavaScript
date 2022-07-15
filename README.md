@@ -3,20 +3,20 @@
 ## Contenido
 
 1. [Introducción](#introduccion)
-2. [Qué es Asincronismo](#que-es-asincronismo)
+2. [Que es Asincronismo](#que-es-asincronismo)
 3. [Event Loop](#event-loop)
 4. [Iniciando a programar con JavaScript](#iniciando-a-programar-con-javascript)
 5. [Configuración](#configuracion)
-6. [Qué son los callbacks](#que-son-los-callbacks)
+6. [Que son los callbacks](#que-son-los-callbacks)
 7. [XMLHTTPRequest](#xmlhttprequest)
 8. [Fetch Data](#fetch-data)
 9. [Callback Hell](#callback-hell)
-10. [Qué son las Promesas](#que-son-las-promesas)
+10. [Que son las Promesas](#que-son-las-promesas)
 11. [Fetch](#fetch)
 12. [Fetch Post](#fetch-post)
 13. [Funciones asíncronas](#funciones-asincronas)
 14. [Try and catch](#try-and-catch)
-15. [Cómo enfrentar bugs]()
+15. [Como enfrentar bugs]()
 
 ## Introducción
 
