@@ -164,11 +164,11 @@ Son funciones que reciben dentro de los argumentos otras funciones las cuales se
 Es un objeto de JS que permite hacer peticiones hacia servicios en la nube(URLs o APIs).
 Existen 5 estados en un llamado XMLHttpRequest:
 
-***0 → Se ha inicializado.***
-***1 → Loading (cargando).***
-***2 → Se ha cargado.***
-***3 → Procesamiento si existe alguna descarga.***
-***4 → Completado.***
+- 0 → Se ha inicializado.
+- 1 → Loading (cargando).
+- 2 → Se ha cargado.
+- 3 → Procesamiento si existe alguna descarga.
+- 4 → Completado.
 
 **Métodos y propiedades:**
 -xmlhttp.open() → Prepara la petición para ser enviada tomando tres parámetros: prótocolo, url, asíncrono (true).
@@ -205,14 +205,14 @@ El código de estado (status codes) sirve para describir el estado de la petici�
     - **404** → Not Found → Indica que no existe el recurso que se está intentando acceder.
     - **500** → Internal Server Error → Indica que algo falló, es un error que retorna el servidor cuando la solicitud no pudo ser procesada.
 
-Fuente: [aquí](https://developer.mozilla.org/es/docs/Web/HTTP/Status)
+Fuente: [aquí](https://developer.mozilla.org/es/docs/Web/HTTP/Status) podras ver toda la documentacion.
 
 Ejemplo en VSC:
 Ir a la consola y ubicarnos en la carpeta del proyecto y escribir el comando para instalar el paquete XMLHttpRequest: ```npm i xmlhttprequest``` [aquí](https://www.npmjs.com/package/xmlhttprequest) veras la documentacion para usos.
 Ir al VSC y crear un archivo llamado challenge.js en la ruta *src/callback*. El archivo queda:
 
 ```javascript
-const XMLHttpRequest = require("xmlhttprequest");
+const XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 const API = 'https://api.escuelajs.co/api/v1';
 
 function fetchData(urlApi, callback){
@@ -223,11 +223,11 @@ function fetchData(urlApi, callback){
         if (xhttp.readyState === 4){
             if (xhttp.status === 200){
                 callback(null, JSON.parse(xhttp.responseText));
-            }
-        } else {
+            } else {
             const error = new Error('Error'+ urlApi);
             return callback(error, null);
-        }
+            }
+        } 
     }
     xhttp.send();
 }
