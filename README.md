@@ -2,30 +2,24 @@
 
 ## Contenido
 
-1. [Introducción](#introduction)
-2. [Qué es asincronismo](#asincronismo)
-3. [Event Loop](#event-loop)
-4. [Iniciando a programar con JavaScript](#iniciando-a-programar-con-javascript)
-5. [Configuración](#configuracion)
-6. [Qué son los callbacks](#que-son-los-callbacks)
-7. [XMLHTTPRequest](#xmlhttprequest)
-8. [Fetch data](#fetch-data)
-9. [Callback hell](#callback-hell)
-10. [Qué son las promesas](#que-son-las-promesas)
-11. [Fetch](#fetch)
-12. [Fetch POST](#fetch-post)
-13. [Funciones asíncronas](#funciones-asincronas)
-14. [Try and catch](#try-and-catch)
-15. [¿Cómo enfrentar los errores?](#como-enfrentar-los-errores)
-16. [Generators](#generators)
-17. [Proyecto](#proyecto)
-18. [Consumiendo API](#consumiendo-api)
-19. [Desplegando el proyecto](#desplegando-el-proyecto)
-20. [Conclusiones](#conclusiones)
+- [Asincronismo-con-JavaScript](#asincronismo-con-javascript)
+  - [Contenido](#contenido)
+  - [Introducción](#introducción)
+  - [Qué es asincronismo](#qué-es-asincronismo)
+  - [Event loop](#event-loop)
+  - [Iniciando a programar con JavaScript](#iniciando-a-programar-con-javascript)
+  - [Configuración](#configuración)
+  - [¿Que son los callback?](#que-son-los-callback)
+  - [XMLHTTPRequest](#xmlhttprequest)
+  - [pendiente](#pendiente)
 
 ## Introducción
 
 Todo lo que necesitas saber para poder usar de manera adecuada el Asincronismo con JavaScript
+
+**[⬆ Volver arriba](#contenido)**
+
+* * *
 
 ## Qué es asincronismo
 
@@ -35,32 +29,32 @@ Así que la definición de ***JavaScript*** es síncrono por defecto y tiene un 
 
 Vamos a seguir separando conceptos muy importantes.
 
-#### - JavaScript es single-threaded:
+**JavaScript es single-threaded:**
 Aún con múltiples procesadores, solo se puede ejecutar tareas en un solo hilo, llamado el hilo principal. Ósea no importa cuantos procesadores tenga tu equipo o donde corre tu programa, JavaScript siempre se ejecuta en un solo hilo una sola tarea.
 
-#### - Bloqueante:
+**Bloqueante:**
 Una tarea no devuelve el control hasta que se ha completado. Esto es algo característico cuando ejecutas todo en un hilo, ósea hasta que no se termine de ejecutar o cumplir la instrucción que se halla declarado o codificado no continua la ejecución del programa.
 
-#### - No bloqueante:
+**No bloqueante:**
 Una tarea se devuelve inmediatamente con independencia del resultado. Si se completó, devuelve los datos. Si no, Un error.
 
-#### - Síncrono:
+**Síncrono:**
 Las tareas se ejecutan de forma secuencial, se debe esperar a que se complete para continuar con la siguiente tarea
 
-#### - Asíncrono: 
+**Asíncrono:**
 Las tareas pueden ser realizadas más tarde, lo que hace posible que una respuesta sea procesada en diferido. La finalización de la operación I/O (entrada/salida) se señaliza más tarde, mediante un mecanismo específico como por ejemplo un callback, una promesa o un evento, lo que hace posible que la respuesta sea procesada en diferido.
 
-#### - Concurrencia en JavaScript:
+**Concurrencia en JavaScript:**
 Utiliza un modelo de concurrencia basado en un *“loop de eventos”*. La concurrencia es la capacidad de un algoritmo o programa para ejecutar más de una tarea a la vez. El concepto es similar al procesamiento paralelo, pero con la posibilidad de que muchos trabajos independientes hagan diferentes cosas a la vez en lugar de ejecutar el mismo trabajo.
 
-#### - EventLoop:
+**EventLoop:**
 El bucle de eventos *(Eventloop)* es un patrón de diseño que espera y distribuye eventos o mensajes en un programa.
 
-#### **- Formas de manejar la asincronía en JavaScript:**
+**Formas de manejar la asincronía en JavaScript:**
 
-- **CallBacks:** Una función que se pasa como argumento de otra función y que será invocada según sea la necesidad.
-- **Promesas:** *(implementado en ES6)* Una promesa es una función no-bloqueante y asíncrona la cual puede retornar un valor ahora, en el futuro o nunca.
-- **Async / Await:** *(implementado en ES2017)* Permite estructurar una función asincrónica sin bloqueo de una manera similar a una función sincrónica ordinaria.
+**CallBacks:** Una función que se pasa como argumento de otra función y que será invocada según sea la necesidad.
+**Promesas:** *(implementado en ES6)* Una promesa es una función no-bloqueante y asíncrona la cual puede retornar un valor ahora, en el futuro o nunca.
+**Async / Await:** *(implementado en ES2017)* Permite estructurar una función asincrónica sin bloqueo de una manera similar a una función sincrónica ordinaria.
 
 ¿Con estas tres funcionalidades JavaScript acaba de convertirse en *Multi-Threaded* con la capacidad de realizar múltiples tareas simultáneamente?, Umm si y no, ya que como se dijo en un comienzo JavaScript es *single-threaded*, y siempre lo será, solo que se ha ido actualizando y adaptando a las necesidades y estas funcionalidades son la forma más fácil de poder hacerlo.
 En **JavaScript** casi todas las operaciones de I/O *(Entrada y Salida)* no se bloquean. A esto se le conoce como asíncronismo. Lo único que no es procesado antes de que termine la operación son los callbacks, ya que éstos están amarrados a una operación y esperan a que sea finalizada para poder ejecutarse.
@@ -77,25 +71,25 @@ Un ejemplo fácil de asincronismo vs sincronismo es invitar a unos amigos a una 
 
 ## Event loop
 
-#### - Event loop:
+**Event loop:**
 El bucle de eventos es un patrón de diseño que espera y distribuye eventos o mensajes en un programa.
 
-#### - Memory Head:
+**Memory Head:**
 Región de memoria libre de gran tamaño, dedicada al alojamiento dinámico de objetos (asignado a un montículo). Es compartida por todo el programa y controlada por un recolector de basura que se encarga de liberar aquello que no se necesita, es decir de forma desorganizada se guarda información de las variables y del scope.
 
-#### - Call Stack _(pila)_:
+**Call Stack (pila)**
 Apila de forma organizada las instrucciones de nuestro programa. La pila de llamadas, se encarga de albergar las instrucciones que deben ejecutarse. Nos indica en que punto del programa estamos, por donde vamos.
 
-#### - Task Queue:
+**Task Queue:**
 Cola de tareas, se maneja la concurrencia, se agregan las tareas que ya estan listas para pasar al stack (pila), y para pasar al stack este debe de estar vacio. Cada vez que nuestro programa recibe una notificación del exterior o de otro contexto distinto al de la aplicación, el mensaje se inserta en una cola de mensajes pendientes y se registra su callback correspondiente. El stack debe estar vacío para que esto suceda.
 
-#### - Micro Task Queue:
+**Micro Task Queue:**
 Las promesas tienen otra forma de ejecutarse y una prioridad superior, y es aqui donde se almacenas esas promesas, con una prioridad mas alta.
 
-#### - Web APIs:
+**Web APIs:**
 El JavaScript del lado del cliente: setTimeOut, XMLHTTPRequest, File Reader y el DOM. Node: fs, https.
 
-#### - Conclusion Event Lopp:
+**Conclusion Event Lopp:**
 Tarea asignada para mover del Task Queue al Stack, solo si el Stack esta vacio.
 
 > Imagen tomada de [pagina ejemplo](https://dev.to/papidiagne30/javascript-event-loop-for-dummies-1bdi)
@@ -150,5 +144,97 @@ Conceptos fundamentales antes de crear el proyecto:
 
 * * *
 
-## Que son los callback:
-Son funciones que reciben dentro de los argumentos otras funciones las cuales serán llamadas o ejecutadas dentro de la función inicial, en la carpeta de ``src/callback`` vemos algunos ejemplos de funciones que llaman otras funciones.
+## ¿Que son los callback?
+Son funciones que reciben dentro de los argumentos otras funciones las cuales serán llamadas o ejecutadas dentro de la función inicial, en la carpeta de ``src/callback/index.js`` vemos algunos ejemplos de funciones que llaman otras funciones.
+
+```javascript
+    function greeting (name){
+        console.log(`Hello! ${name}`);
+    }
+
+    // esta funcion setTimeout recive estos parametros (function, wait time, arguments)
+    setTimeout(greeting, 2000, 'Elkin');
+```
+
+**[⬆ Volver arriba](#contenido)**
+
+* * *
+
+## XMLHTTPRequest
+Es un objeto de JS que permite hacer peticiones hacia servicios en la nube(URLs o APIs).
+Existen 5 estados en un llamado XMLHttpRequest:
+
+- 0 → Se ha inicializado.
+- 1 → Loading (cargando).
+- 2 → Se ha cargado.
+- 3 → Procesamiento si existe alguna descarga.
+- 4 → Completado.
+
+**Métodos y propiedades:**
+-xmlhttp.open() → Prepara la petición para ser enviada tomando tres parámetros: prótocolo, url, asíncrono (true).
+- xmlhttp.readyState → Retorna el estado de la petición.
+- xmlhttp.onreadystatechange → Un eventHandler que es llamado cuando la propiedad readyState cambia.
+- xmlhttp.status → Retorna el estado de la respuesta de la petición. (200,400,500)
+- xmlhttp.send() → Envía la petición.
+
+**Características del protocolo http:**
+- **Verbos:** Los verbos indican acciones que están asociadas a peticiones y recursos, es decir, sirven para la manipulación de recursos cliente/servidor.
+- **Los Verbos http son:**
+    - **GET** → Solicita un recurso.
+    - **HEAD** → Solicita un recurso pero sin retornar información, la estructura de esta petición es igual que get tanto en su headers como estatus. Es útil cuando vamos a utilizar API, para comprobar si lo que vamos a enviar esta correcto y puede ser procesado.
+    - **POST** → Sirve para la creación de recursos en el servidor.
+    - **PUT** → Actualiza por completo un recurso, reemplaza todas las representaciones actuales del recurso de destino con la carga útil de la petición.
+    - **PATCH** → Actualiza parcialmente un recurso.
+    - **DELETE** → Elimina un recurso.
+
+- **Los códigos de estados del servidor:**
+El código de estado (status codes) sirve para describir el estado de la petición hecha al servidor.
+    - **1xx** → Indican que la petición fue recibida por el servidor, pero está siendo procesada por el servidor.
+    - **2xx** → Indican que la petición fue recibida, aceptada y procesada correctamente.
+    - **3xx** → Indican que hay que tomar acciones adicionales para completar la solicitud.
+    - **4xx** → Indican errores del lado del cliente que hizo mal una solicitud.
+    - **5xx** → Indican errores del servidor. Suelen aparecer cuando existe un fallo en la ejecución en el servidor.
+
+- Los códigos más comunes a la hora de interactuar con una API son:
+    - **200** → OK → Indica que todo está correcto.
+    - **201** → Created → Todo está correcto cuando se hizo una solicitud POST, el recurso se creó y se guardó correctamente.
+    - **204** → No Content → Indica que la solicitud se completó correctamente pero no devolvió información. Este es común cuando se hacen peticiones con el verbo DELETE.
+    - **400** → Bad Request → Indica que algo está mal en la petición (no encontró algo).
+    - **401** → Unauthorized → Significa que antes de hacer una solicitud al servidor nos debemos autenticar.
+    - **403** → Forbidden → Indica que no tenemos acceso a ese recurso, aunque se esté autenticado.
+    - **404** → Not Found → Indica que no existe el recurso que se está intentando acceder.
+    - **500** → Internal Server Error → Indica que algo falló, es un error que retorna el servidor cuando la solicitud no pudo ser procesada.
+
+Fuente: [aquí](https://developer.mozilla.org/es/docs/Web/HTTP/Status) podras ver toda la documentacion.
+
+Ejemplo en VSC:
+Ir a la consola y ubicarnos en la carpeta del proyecto y escribir el comando para instalar el paquete XMLHttpRequest: ```npm i xmlhttprequest``` [aquí](https://www.npmjs.com/package/xmlhttprequest) veras la documentacion para usos.
+Ir al VSC y crear un archivo llamado challenge.js en la ruta *src/callback*. El archivo queda:
+
+```javascript
+const XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
+const API = 'https://api.escuelajs.co/api/v1';
+
+function fetchData(urlApi, callback){
+    let xhttp = new XMLHttpRequest();
+
+    xhttp.open('GET', urlApi, true);
+    xhttp.onreadystatechange = function (event){
+        if (xhttp.readyState === 4){
+            if (xhttp.status === 200){
+                callback(null, JSON.parse(xhttp.responseText));
+            } else {
+            const error = new Error('Error'+ urlApi);
+            return callback(error, null);
+            }
+        } 
+    }
+    xhttp.send();
+}
+```
+
+**[⬆ Volver arriba](#contenido)**
+
+* * *
+
+## pendiente
