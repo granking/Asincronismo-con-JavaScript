@@ -100,6 +100,7 @@ Tarea asignada para mover del Task Queue al Stack, solo si el Stack esta vacio.
 * * *
 
 ## Iniciando a programar con JavaScript
+
 Aqui solo quiero motivarlos para que puedan avnzar y alcanzar las metas, intentar entender el porque se hace y para que se hace y como se ejecuta realmente todo lo que en cada lenguaje hacemos. 🚗✈🌎🏝🎆🎉🎊🎭
 
 **[⬆ Volver arriba](#contenido)**
@@ -107,8 +108,10 @@ Aqui solo quiero motivarlos para que puedan avnzar y alcanzar las metas, intenta
 * * *
 
 ## Configuración
+
 Aquí veras la configuración del proyecto inicial y te indicare los pasos que se realizaron.
 Conceptos fundamentales antes de crear el proyecto:
+
 - Crear e inicializar un Proyecto:
 - Tener instalado Visual Studio Code o lo puedes instalar [Aquí]( https://code.visualstudio.com/) o utiliza tu editor preferido.
 - Abrir la terminal de tu preferencia.
@@ -145,6 +148,7 @@ Conceptos fundamentales antes de crear el proyecto:
 * * *
 
 ## ¿Que son los callback?
+
 Son funciones que reciben dentro de los argumentos otras funciones las cuales serán llamadas o ejecutadas dentro de la función inicial, en la carpeta de ``src/callback/index.js`` vemos algunos ejemplos de funciones que llaman otras funciones.
 
 ```javascript
@@ -161,6 +165,7 @@ Son funciones que reciben dentro de los argumentos otras funciones las cuales se
 * * *
 
 ## XMLHTTPRequest
+
 Es un objeto de JS que permite hacer peticiones hacia servicios en la nube(URLs o APIs).
 Existen 5 estados en un llamado XMLHttpRequest:
 
@@ -171,23 +176,26 @@ Existen 5 estados en un llamado XMLHttpRequest:
 - 4 → Completado.
 
 **Métodos y propiedades:**
--xmlhttp.open() → Prepara la petición para ser enviada tomando tres parámetros: prótocolo, url, asíncrono (true).
+
+- xmlhttp.open() → Prepara la petición para ser enviada tomando tres parámetros: prótocolo, url, asíncrono (true).
 - xmlhttp.readyState → Retorna el estado de la petición.
 - xmlhttp.onreadystatechange → Un eventHandler que es llamado cuando la propiedad readyState cambia.
 - xmlhttp.status → Retorna el estado de la respuesta de la petición. (200,400,500)
 - xmlhttp.send() → Envía la petición.
 
 **Características del protocolo http:**
+
 - **Verbos:** Los verbos indican acciones que están asociadas a peticiones y recursos, es decir, sirven para la manipulación de recursos cliente/servidor.
 - **Los Verbos http son:**
-    - **GET** → Solicita un recurso.
-    - **HEAD** → Solicita un recurso pero sin retornar información, la estructura de esta petición es igual que get tanto en su headers como estatus. Es útil cuando vamos a utilizar API, para comprobar si lo que vamos a enviar esta correcto y puede ser procesado.
-    - **POST** → Sirve para la creación de recursos en el servidor.
-    - **PUT** → Actualiza por completo un recurso, reemplaza todas las representaciones actuales del recurso de destino con la carga útil de la petición.
-    - **PATCH** → Actualiza parcialmente un recurso.
-    - **DELETE** → Elimina un recurso.
+  - **GET** → Solicita un recurso.
+  - **HEAD** → Solicita un recurso pero sin retornar información, la estructura de esta petición es igual que get tanto en su headers como estatus. Es útil cuando vamos a utilizar API, para comprobar si lo que vamos a enviar esta correcto y puede ser procesado.
+  - **POST** → Sirve para la creación de recursos en el servidor.
+  - **PUT** → Actualiza por completo un recurso, reemplaza todas las representaciones actuales del recurso de destino con la carga útil de la petición.
+  - **PATCH** → Actualiza parcialmente un recurso.
+  - **DELETE** → Elimina un recurso.
 
 - **Los códigos de estados del servidor:**
+
 El código de estado (status codes) sirve para describir el estado de la petición hecha al servidor.
     - **1xx** → Indican que la petición fue recibida por el servidor, pero está siendo procesada por el servidor.
     - **2xx** → Indican que la petición fue recibida, aceptada y procesada correctamente.
@@ -196,14 +204,14 @@ El código de estado (status codes) sirve para describir el estado de la petici�
     - **5xx** → Indican errores del servidor. Suelen aparecer cuando existe un fallo en la ejecución en el servidor.
 
 - Los códigos más comunes a la hora de interactuar con una API son:
-    - **200** → OK → Indica que todo está correcto.
-    - **201** → Created → Todo está correcto cuando se hizo una solicitud POST, el recurso se creó y se guardó correctamente.
-    - **204** → No Content → Indica que la solicitud se completó correctamente pero no devolvió información. Este es común cuando se hacen peticiones con el verbo DELETE.
-    - **400** → Bad Request → Indica que algo está mal en la petición (no encontró algo).
-    - **401** → Unauthorized → Significa que antes de hacer una solicitud al servidor nos debemos autenticar.
-    - **403** → Forbidden → Indica que no tenemos acceso a ese recurso, aunque se esté autenticado.
-    - **404** → Not Found → Indica que no existe el recurso que se está intentando acceder.
-    - **500** → Internal Server Error → Indica que algo falló, es un error que retorna el servidor cuando la solicitud no pudo ser procesada.
+  - **200** → OK → Indica que todo está correcto.
+  - **201** → Created → Todo está correcto cuando se hizo una solicitud POST, el recurso se creó y se guardó correctamente.
+  - **204** → No Content → Indica que la solicitud se completó correctamente pero no devolvió información. Este es común cuando se hacen peticiones con el verbo DELETE.
+  - **400** → Bad Request → Indica que algo está mal en la petición (no encontró algo).
+  - **401** → Unauthorized → Significa que antes de hacer una solicitud al servidor nos debemos autenticar.
+  - **403** → Forbidden → Indica que no tenemos acceso a ese recurso, aunque se esté autenticado.
+  - **404** → Not Found → Indica que no existe el recurso que se está intentando acceder.
+  - **500** → Internal Server Error → Indica que algo falló, es un error que retorna el servidor cuando la solicitud no pudo ser procesada.
 
 Fuente: [aquí](https://developer.mozilla.org/es/docs/Web/HTTP/Status) podras ver toda la documentacion.
 
