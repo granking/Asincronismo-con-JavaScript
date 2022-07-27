@@ -4,7 +4,7 @@
   "description": "asincronismo con JavaScript",
   "main": "index.js",
   "scripts": {
-    "deploy": "gh-pages -d scr"
+    "deploy": "gh-pages -d src"
   },
   "repository": {
     "type": "git",
