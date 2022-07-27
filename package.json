@@ -4,7 +4,7 @@
   "description": "asincronismo con JavaScript",
   "main": "index.js",
   "scripts": {
-    "callback": "node src/callback/challenge.js"
+    "deploy": "gh-pages -d scr"
   },
   "repository": {
     "type": "git",
@@ -23,5 +23,8 @@
     "node-fetch": "^3.2.8",
     "xmlhttprequest": "^1.8.0"
   },
-  "type": "module"
+  "type": "module",
+  "devDependencies": {
+    "gh-pages": "^4.0.0"
+  }
 }
